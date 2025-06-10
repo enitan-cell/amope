@@ -1,0 +1,51 @@
+/* Custom CSS Styles */
+#hero {
+  background-image: url('images/salon.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* 60% of the viewport height */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+}
+
+/* Section for the cards, using flexbox for layout */
+.cards-section {
+  padding: 50px 0;
+}
+
+.cards-container {
+  display: flex; /* Enable flexbox */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  justify-content: center; /* Center cards horizontally when they don't fill the row */
+  gap: 20px; /* Space between cards */
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* Flex grow, shrink, and basis for 3 cards per row with gap */
+  max-width: calc(33.333% - 20px); /* Ensure max width for 3 cards per row */
+  min-width: 280px; /* Minimum width for cards before wrapping */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Simple hover effect */
+}
+
+/* Responsive adjustments for cards */
+@media (max-width: 991.98px) { /* For tablets and smaller desktops */
+  .card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 767.98px) { /* For mobile devices */
+  .card {
+    flex: 1 1 calc(100% - 20px); /* 1 card per row */
+    max-width: calc(100% - 20px);
+  }
+}
